@@ -193,3 +193,6 @@ Other functionality worth noting is the ability to configure breakpoints. You ca
 ## Conclusion
 
 In this article, we talked about how to get your debugger set up and ready to run. Learning to use the debugger is one of the most valuable skills you can have as a coder. It can greatly increase your speed and effectiveness in finding and getting to the root of a problem. It can help you more rapidly understand what your code is doing. Practice working with the debugger and it will quickly become your go-to tool when you want to figure out problems and eliminate bugs in your code.
+    
+> ### Biography
+> David Stockton is a husband, father and Software Developer. He is VP of Technology at i3logix in Colorado leading a few teams of software developers building a very diverse array of applications. He has two daughters, 10 and 9, who are learning to code in a variety of languages and build cirtcuits and a 3 year old son who has been seen studying calculus and recursive algorithms. David is an active proponent of TDDs, APIs and elegant PHP.
