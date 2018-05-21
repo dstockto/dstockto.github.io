@@ -78,13 +78,13 @@ By default, Xdebug works in 'req' mode, meaning a debug session will be initiate
 
 In PHP Storm, you must enable debugging. This is a small "phone" icon that is usually red. Clicking it will turn it green.
 
-![Figure 1: Enabling Debugging In PHP Storm](figures/figure1.png)
+![Figure 1: Enabling Debugging In PHP Storm](/figures/2015/01/figure1.png)
 
 If this icon is not enabled (green) then Xdebug will not be able to connect to the IDE (server).
 
 At this point, your IDE should be ready to accept debugging connections, so we need to start one. First, create a breakpoint in your code. In PHP Storm, you can create a breakpoint by clicking in the margin or gutter next to the line you want Xdebug to stop on. The red circle indicates a breakpoint is on line 6. Xdebug will pause the code right before running line 6. See Figure 2 for what this looks like.
 
-![Figure 2: Creating a breakpoint](figures/figure2.png)
+![Figure 2: Creating a breakpoint](/figures/2015/01/figure2.png)
 
 Create a breakpoint on a line of code you're sure will run. Later on, we'll be more discerning in setting breakpoints, but for now we want to ensure things are working.
 
@@ -97,11 +97,11 @@ Debugging from the web is pretty simple. You can add ```?XDEBUG_SESSION_START=1`
 3. For Opera: <https://addons.opera.com/en/extensions/details/xdebug-launcher/?display=en>. Like the others, this adds a bug icon near the location bar to toggle debugging on and off.
 4. For Safari: <https://extensions.apple.com/details/?id=nl.wrep.xdebug-helper.safari-28RC4265JU>. This appears to work like the Chrome extension and exposes extra functionality of Xdebug as well as being able to toggle debugging.
 
-![Figure 3: Debugging Plugin Enabled in Chrome](figures/figure3.png)
+![Figure 3: Debugging Plugin Enabled in Chrome](/figures/2015/01/figure3.png)
 
 Once you've toggled on the debug setting or added the query string, make the request. If everything is working, you should see a popup in PHP Storm indicating that there is an incoming request. For best results, make sure the code in your IDE matches the code on the server you're debugging.
 
-![Figure 4: Incoming Debugging Session](figures/figure4.png)
+![Figure 4: Incoming Debugging Session](/figures/2015/01/figure4.png)
 
 When you accept the dialog shown in Figure 4, PHP Storm will provide a mapping from the file path on the server to the file path of your local machine. If your code follows a standard framework MVC style layout, this mapping will not be sufficient to find the other code, so we need to update the mapping in the settings.
 
@@ -109,7 +109,7 @@ Open PHP Storm's settings and go to PHP > Servers. In the newest versions of PHP
 
 Figure 5 shows what the mapping looks like.
 
-![Figure 5: Server file mapping](figures/figure5.png)
+![Figure 5: Server file mapping](/figures/2015/01/figure5.png)
 
 As you can see, the mapping is provided to the index.php file, but we want to be able to debug into any of our project files. To do this, click on the empty area to the right of the root of your project and enter the absolute path on the server to those same files. For me, this is /vagrant_web mapping to my project's *_web directory. PHP Storm will use the mapping combined with the relative paths of anything below it that hasn't been specified. This means that you may only need the one mapping, but if your deployment moves things around, the mapping is flexible enough you could specify a path to every single file being in a different place on the server. Not that I'd ever recommend doing that but if you wanted to, you could.
 
@@ -133,7 +133,7 @@ unset XDEBUG_CONFIG
 
 My recommendation to simplify the process of starting and stopping the debugger is to make some shell aliases and functions. Listing 1 shows what I use.
 
-[Listing 1](listings/listing1.sh)
+[Listing 1](/listings/2015/01/listing1.sh)
 
 Now let's learn how to control the debugger.
 
@@ -141,7 +141,7 @@ Now let's learn how to control the debugger.
 
 Whether you've started the debugger through a web or API call or through a CLI program, the debugger acts the same. Let's take a quick tour of the debugging interface.
 
-![Figure 6: Debugging Interface in PHP Storm](figures/figure6.png)
+![Figure 6: Debugging Interface in PHP Storm](/figures/2015/01/figure6.png)
 
 You should see two tabs, one labeled debugger, the other Console. The Console tab will show output from your script. Errors can appear there too, but most of your time will probably be in the Debugger tab. Going from left to right, you should see the Frames panel, the variables panel, and the watch panel.
 
@@ -153,7 +153,7 @@ The final panel is watch. In this panel you can set up variables that you want t
 
 Let's look at the icons in the debugger interface.
 
-![Figure 7: Debugging icons, vertical](figures/figure7.png)
+![Figure 7: Debugging icons, vertical](/figures/2015/01/figure7.png)
 
 In Figure 7, going from top to bottom:
 
@@ -167,7 +167,7 @@ There are more icons below, but these are the most important for our purpose. Yo
 
 Now for the icons along the top bar.
 
-![Figure 8: Debugging icons, horizontal](figures/figure8.png)
+![Figure 8: Debugging icons, horizontal](/figures/2015/01/figure8.png)
 
 In Figure 8, you'll see the most important icons in debugging. I've left the tabs in for context. The green play button is the same as we discussed earlier. Starting with the first icon after the Console tab:
 
@@ -182,12 +182,12 @@ There are more icons and functionality in the debugger, but I feel those are the
 
 As you progress through your code, you'll be able to see the value of variables in the variable window (and change them if needed). Hover over the variables in the code window to see their contents. If there's an error occurring and you're not sure what's causing it, it is not uncommon to run past the function that causes the error. You can set a new breakpoint at that function and on your next run, jump right to that point and step through that function. In this way, you can quickly locate the problem.
 
-![Figure 9: Hover a variable to view contents](figures/figure9.png)
+![Figure 9: Hover a variable to view contents](/figures/2015/01/figure9.png)
 
 
 Other functionality worth noting is the ability to configure breakpoints. You can do this through the breakpoint list icon or by right clicking on a breakpoint. You can use this to make breakpoints that only stop when a condition is true. Imagine a situation where you're looping over 20,000 items and you want to see what happens between the 9,999th and 10,000th. You can create a breakpoint that stops when your counter is at 9,999. In that way, you won't have to run the loop manually the first 9,998 times. You can also configure breakpoints to be inactive until another breakpoint has been hit, or to log a message to the console instead of stopping execution. All of these tools work to help make you more efficient and become a better developer overall. 
 
-![Figure 10: Advanced breakpoint configuration](figures/figure10.png)
+![Figure 10: Advanced breakpoint configuration](/figures/2015/01/figure10.png)
 
 
 ## Conclusion
