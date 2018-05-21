@@ -134,7 +134,21 @@ unset XDEBUG_CONFIG
 
 My recommendation to simplify the process of starting and stopping the debugger is to make some shell aliases and functions. Listing 1 shows what I use.
 
-[Listing 1](/listings/2015/01/listing1.sh)
+```
+function mybugon() {
+  export PHP_IDE_CONFIG="serverName=myserver.dev"
+  export XDEBUG_CONFIG="idekey=PHPSTORM"
+}
+
+function mybugoff() {
+  unset PHP_IDE_CONFIG
+  unset XDEBUG_CONFIG
+}
+
+alias bugon="mybugon"
+alias bugoff="mybugoff"
+
+```
 
 Now let's learn how to control the debugger.
 
