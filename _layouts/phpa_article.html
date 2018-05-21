@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<small>
+    This article was originally published in <a href=https://www.phparch.com/">PHP Architect Magazine</a> in the {{ page.date | date: "%B %y" }}
+    issue. I wrote a column called "Leveling Up" from January 2015 until June 2017. The content of the articles here
+    are as they were originally published.
+</small>
+<small><a href="/">&laquo;- More Articles</a></small>
+<small>{{ page.date | date: "%B %Y" }}</small>
+<h1>{{ page.title }}</h1>
+
+<p class="view">by {{ page.author | default: site.author }}</p>
+
+{{content}}
+
+{% if page.tags %}
+<small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+{% endif %}

@@ -1,6 +1,6 @@
 ---
-layout: post
-title: Leveling Up Using a Debugger
+layout: phpa_article
+title: Leveling Up: Using a Debugger
 author: David Stockton
 category: [php_architect, debugging]
 tags: [ php, debugging, xdebug, phpstorm, php architect ]
