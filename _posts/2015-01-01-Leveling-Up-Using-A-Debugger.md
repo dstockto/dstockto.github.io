@@ -3,6 +3,7 @@ layout: post
 title: Leveling Up Using a Debugger
 author: David Stockton
 category: [php, debugging]
+tags: [ php, debugging, xdebug, phpstorm ]
 ---
 > In our first Leveling Up column, we're going to talk about something that should be a go-to tool in every developer's toolbox: Debugging. We're going to talk about how to move beyond var_dump, print_r and console.log to use xdebug to help you quickly gain insight into what your code is doing and how to make it work like it should. Debugging is an extremely powerful way to work with your code that most PHP developers don't take advantage of more.
 
