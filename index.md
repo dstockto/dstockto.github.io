@@ -5,7 +5,7 @@ The articles below originally appeared in PHP Architect magazine in a month colu
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }} - {{ post.date }}</a>
+      <a href="{{ post.url }}">{{ post.title }} - {{ post.date | date: '%B %Y' }}</a>
     </li>
   {% endfor %}
 </ul>
