@@ -1,3 +1,5 @@
 theme: jekyll-theme-hacker
 title: David Stockton
 description: Trying out github pages
+site:
+  author: Dave Stockton

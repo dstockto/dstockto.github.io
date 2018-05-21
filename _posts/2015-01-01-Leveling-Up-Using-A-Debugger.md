@@ -1,5 +1,5 @@
 ---
-layout: phpa_article
+layout: article
 title: Leveling Up: Using a Debugger
 author: David Stockton
 category: [php_architect, debugging]
