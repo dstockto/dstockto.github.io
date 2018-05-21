@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Leveling Up: Using a Debugger"
+title: Leveling Up Using a Debugger
 author: David Stockton
 date:   2015-01-30 14:04:04 -0600
 category: [php_architect, debugging]
