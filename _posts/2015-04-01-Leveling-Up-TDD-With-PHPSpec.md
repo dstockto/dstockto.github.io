@@ -140,7 +140,7 @@ Now refer back to listing 1, and let's go over the spec code. First of all, it's
 The next important bit is the `$this` keyword. Normally, we think of `$this` as being an instance of the object of the class we're using. In phpspec, this is also true, as it's just PHP. However, `$this` should really be thought of as our SUT, or System Under Test. That means `$this->shouldHaveType('PhpArch\Calculator');` indicates to phpspec that the code we're testing should be a `PhpArch\Calculator`. Indeed, our test is a wrapped version of our Calculator, which means we can set up behaviors and expectations as well as test return values. Instead of using methods like `$this->assertEquals()` like you may be used to in phpunit, phpspec uses matchers. Let's try it out by writing some more spec. Add this method to your CalculatorSpec.php class:
 
 ```php
-	function it_can_add_two_integers()
+    function it_can_add_two_integers()
     {
         $this->add(2, 2)->shouldBe(4);
     }
