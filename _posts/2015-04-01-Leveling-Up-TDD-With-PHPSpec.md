@@ -2,7 +2,7 @@
 layout: article
 title: "Leveling Up: TDD With PHPSpec"
 author: David Stockton
-date:   2015-03-31 12:00:00 -0600
+date:   2015-04-30 12:00:00 -0600
 category: [php_architect, TDD]
 tags: [ php, TDD, phpspec, unit testing ]
 ---
