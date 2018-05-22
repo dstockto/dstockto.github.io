@@ -6,9 +6,6 @@ date:   2015-02-28 12:00:00 -0600
 category: [php_architect, mentoring]
 tags: [ php, learning, mentoring, teaching ]
 ---
-# Leveling Up: Teaching and Mentoring
-###### by David Stockton
-
 > This column is about how to improve yourself. This could be how to improve as a developer, as a manager, as a person. This month, it's a little of everything, including how to improve yourself by helping others improve themselves and learn new skills. We'll be doing this by talking about teaching coding to others. Teaching is a powerful and rewarding method of improving your skills while  helping others.
 
 ## Introduction
