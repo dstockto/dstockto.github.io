@@ -1,0 +1,100 @@
+
+      PhpArch\AuthAdapter
+
+   9  ✔ is initializable
+  14  ! will accept a username
+        method PhpArch\AuthAdapter::setUsername not found.
+MacBookPro:phpspec davidstockton$ phpspec run
+
+      PhpArch\AuthAdapter
+
+   9  ✔ is initializable
+  14  ! will accept a username
+        method PhpArch\AuthAdapter::setUsername not found.
+  23  ! will accept a password
+        method PhpArch\AuthAdapter::setPassword not found.
+
+----  broken examples
+
+        PhpArch/AuthAdapter
+  14  ! will accept a username
+        method PhpArch\AuthAdapter::setUsername not found.
+
+        PhpArch/AuthAdapter
+  23  ! will accept a password
+        method PhpArch\AuthAdapter::setPassword not found.
+
+
+1 specs
+3 examples (1 passed, 2 broken)
+10ms
+                                                                                
+  Do you want me to create `PhpArch\AuthAdapter::setUsername()` for you?        
+                                                                         [Y/n] 
+y
+  Method PhpArch\AuthAdapter::setUsername() has been created.
+  
+                                                                                
+  Do you want me to create `PhpArch\AuthAdapter::setPassword()` for you?        
+                                                                         [Y/n] 
+y
+  Method PhpArch\AuthAdapter::setPassword() has been created.
+  
+
+      PhpArch\AuthAdapter
+
+   9  ✔ is initializable
+  14  ! will accept a username
+        method PhpArch\AuthAdapter::getUsername not found.
+  23  ! will accept a password
+        method PhpArch\AuthAdapter::getPassword not found.
+
+----  broken examples
+
+        PhpArch/AuthAdapter
+  14  ! will accept a username
+        method PhpArch\AuthAdapter::getUsername not found.
+
+        PhpArch/AuthAdapter
+  23  ! will accept a password
+        method PhpArch\AuthAdapter::getPassword not found.
+
+
+1 specs
+3 examples (1 passed, 2 broken)
+12ms
+                                                                                
+  Do you want me to create `PhpArch\AuthAdapter::getUsername()` for you?        
+                                                                         [Y/n] 
+y
+  Method PhpArch\AuthAdapter::getUsername() has been created.
+  
+                                                                                
+  Do you want me to create `PhpArch\AuthAdapter::getPassword()` for you?        
+                                                                         [Y/n] 
+y
+  Method PhpArch\AuthAdapter::getPassword() has been created.
+  
+
+      PhpArch\AuthAdapter
+
+   9  ✔ is initializable
+  14  ✘ will accept a username
+        expected "bob", but got null.
+  23  ✘ will accept a password
+        expected "550fb980b20a9", but got null.
+
+----  failed examples
+
+        PhpArch/AuthAdapter
+  14  ✘ will accept a username
+        expected "bob", but got null.
+
+        PhpArch/AuthAdapter
+  23  ✘ will accept a password
+        expected "550fb980b20a9", but got null.
+
+
+1 specs
+3 examples (1 passed, 2 failed)
+14ms

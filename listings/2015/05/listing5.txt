@@ -1,0 +1,14 @@
+    function it_will_return_an_authed_user_if_found_and_password_is_correct(
+    	$service, 
+    	AuthedUser $authedUser
+	) {
+        $passwordHash = password_hash('password', PASSWORD_DEFAULT);
+        $service->getUserByUsername('bob')->willReturn($authedUser);
+
+        $authedUser->getPassword()->willReturn($passwordHash);
+
+        $this->setPassword('password');
+        $this->setUsername('bob');
+
+        $this->authenticate()->shouldHaveType(AuthedUser::class);
+    }
