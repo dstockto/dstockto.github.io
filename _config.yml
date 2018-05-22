@@ -5,3 +5,4 @@ site:
   author: Dave Stockton
 plugins:
   - jekyll-sitemap
+permalink: pretty
