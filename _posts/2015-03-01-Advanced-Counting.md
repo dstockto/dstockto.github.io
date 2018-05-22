@@ -45,7 +45,7 @@ You're probably also familiar with some other number systems as well. Think of h
 |  1.00  |   .25   |  .10 |   .05  |  .01  |
 |     2  |    3    |   1  |   1    |   2   |
 
-If you follow the same rules as above, multiplying each column header by the value below and adding them, you'll end up with 2.92. However, money doesn't have the same rules as number and counting systems. For instance, the $0.05 nickel could have been represented or given as 5 pennies, or any other of a number of possible representations of the same $2.87 value. So for the rest of this article we'll be talking about straight base-n number systems, all of which follow the same rules.
+If you follow the same rules as above, multiplying each column header by the value below and adding them, you'll end up with 2.92. However, money doesn't have the same rules as number and counting systems. For instance, the $0.05 nickel could have been represented or given as 5 pennies, or any other of a number of possible representations of the same $2.92 value. So for the rest of this article we'll be talking about straight base-n number systems, all of which follow the same rules.
 
 ## The rules of base-n number systems
 
@@ -55,7 +55,7 @@ Starting with our familiar base-10 number system as an example, let's talk about
 2. When counting (incrementing by 1), if a column contains a value that cannot be represented by a single digit, reduce that column to 0 and increment the next column to the left. This is a round-about way of saying "carry the 1".
 3. The value of each column is the base number raised to the next integer power higher than the column to its right. This means that the right most column's value will be the base raised to the 0th power. The column on its left will be the base raised to the 1st power. Then next column is the base raised to the 2nd power, and so on. I'll be using the caret (^) to represent powers from this point forward, for instance, 10 raised to the 2nd power (10 squared) would be 10^2. So the general case could look something like this:
 
-|base n | n^4  | n^3  | n^2 | n^1 | n^0 |
+|base n | n<sup>4</sup  | n^3  | n^2 | n^1 | n^0 |
 |:-----:|:----:|:----:|:---:|:---:|:---:|
 |base 10|10,000|1,000 | 100 | 10  |  1  |
 
