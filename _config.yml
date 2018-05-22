@@ -3,3 +3,5 @@ title: David Stockton
 description: Trying out github pages
 site:
   author: Dave Stockton
+plugins:
+  - jekyll-sitemap
