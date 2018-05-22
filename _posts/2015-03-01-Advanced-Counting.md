@@ -55,17 +55,17 @@ Starting with our familiar base-10 number system as an example, let's talk about
 2. When counting (incrementing by 1), if a column contains a value that cannot be represented by a single digit, reduce that column to 0 and increment the next column to the left. This is a round-about way of saying "carry the 1".
 3. The value of each column is the base number raised to the next integer power higher than the column to its right. This means that the right most column's value will be the base raised to the 0th power. The column on its left will be the base raised to the 1st power. Then next column is the base raised to the 2nd power, and so on. I'll be using the caret (^) to represent powers from this point forward, for instance, 10 raised to the 2nd power (10 squared) would be 10^2. So the general case could look something like this:
 
-|base n | n<sup>4</sup>  | n^3  | n^2 | n^1 | n^0 |
-|:-----:|:----:|:----:|:---:|:---:|:---:|
-|base 10|10,000|1,000 | 100 | 10  |  1  |
+|base n | n<sup>4</sup>  | n<sup>3</sup>  | n<sup>2</sup> | n<sup>1</sup> | n<sup>0</sup> |
+|:-----:|:--------------:|:--------------:|:-------------:|:-------------:|:-------------:|
+|base 10|    10,000      |      1,000     |       100     |      10       |       1       |
 
 ## Base-2, same rules
 
 Let's take a look at the same set of rules that we have for base-10 with base-2. Rule 1 indicates we can use the numbers from 0 up to one less than the base: so for base 2, our allowed numbers are 0 and 1. The values of the columns look like this:
 
-| 2^4 | 2^3 | 2^2 | 2^1 | n^0 |
-|:---:|:---:|:---:|:---:|:---:|
-|  16 |  8  |  4  |  2  |  1  |
+| 2<sup>4</sup> | 2<sup>3</sup> | 2<sup>2</sup> | 2<sup>1</sup> | n<sup>0</sup> |
+|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
+|            16 |            8  |            4  |            2  |            1  |
 
 With all of our example bases, you might have noticed that the right-most column is always a 1. With base-2, we're "carrying the 1" every other time we increment in counting. Let's see what the first 16 numbers look like:
 
