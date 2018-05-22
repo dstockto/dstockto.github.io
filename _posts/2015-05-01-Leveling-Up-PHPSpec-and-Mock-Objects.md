@@ -257,7 +257,7 @@ Over the course of the remainder of this article, you'll likely see references t
 
 Finally, it's time to build some spec that requires other classes that don't exist. Phpsepc uses type hints to help determine what is required in our classes. Additionally, it has a special method called `let` which like PHPUnit's `setup` method, is run before each of our tests. Since our `AuthAdapter` class will not be of any use without an AuthService, I've decided we should be injecting it into AuthAdapter via the constructor. We'll do this by adding the `let` method and a new call, `beConstructedWith`. Add this method at the top of your AuthAdapterSpec.php code:
 
-```
+```php
     function let(AuthServiceInterface $service)
     {
         $this->beConstructedWith($service);
@@ -274,7 +274,7 @@ Creating the first test is straight forward, and it starts to show the true powe
 
 On to the spec. In the code below (added to our AuthService spec), you'll see that we're now passing in and using a variable called $service. This variable matches the name of the AuthService variable we sent in through the `let` method. In fact, it's the exact object. We can now provide some fake functionality to our service and see how our AuthAdapter should deal with it. We're first telling the $service that if getUsername is called with a string of 'bob' it should return some other parameter we've passed into the spec, called $guestUser. Additionally, the type hinting indicates that $guestUser should be a mock of the \PhpArch\GuestUser class (technically a dummy since it has no functionality). When we call authenticate, we should get back an instance of GuestUser. (In the code below, I've added the appropriate `use` directives, so I don't have the full namespace).
 
-```
+```php
     function it_will_return_a_guest_if_user_not_found($service, GuestUser $guestUser)
     {
         $service->getUserByUsername('bob')->willReturn($guestUser);
@@ -295,7 +295,7 @@ phpspec run
 
 That should be sufficient to make phpspec stop complaining. Now it will prompt you and ask if you'd like it to create the `authenticate` method on our AuthAdapter for us. Since it's just skeleton code, why not? It will then re-run automatically and we've got a single failing test. The test that failed says that it was expecting a GuestUser but instead got a null. The simplest thing that could work would be to have our AuthAdapter's authenticate method return a new GuestUser. Afterwards, all our spec should be passing again.
 
-```
+```php
     public function authenticate()
     {
         return new \PhpArch\GuestUser();
@@ -336,13 +336,13 @@ Let's take a look at what it's doing. First, we set up a legitimate password has
 
 If you run `phpspec run` at this point, you'll see there's a new error that phpspec doesn't offer to correct for us. This time it's that the `AuthedUser` doesn't have a method called `getPassword`. This is because our real AuthedUser doesn't have that method. This points to a good reason to use interfaces in our typehints. In this case, we have a couple of options. We could switch gears and work on the `AuthedUser` spec to ensure that there is a `getPassword` method, or we can cheat, and just add this as an empty method. I'll leave it to you which way you want to go. If we were using an interface instead of a concrete class, we could just add `getPassword` to the interface. Adding the following line to `AuthedUser` will get us to the next step, but it "feels" wrong.
 
-```
+```php
 public function getPassword(){ }
 ```
 
 Now, we should run phpspec again. Now the spec should fail because our AuthAdapter is not working for legit users. Let's fix that. This test means we're going to actually need to start using the service that's been sent into the adapter. If you recall, the constructor is currently empty. We'll fix that by creating a class property and initializing to the value injected into the constructor. That will look something like this:
 
-```
+```php
     protected $service;
     public function __construct(AuthServiceInterface $service)
     {
